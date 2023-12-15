@@ -1,8 +1,6 @@
 import React from "react";
 
-const MusicTable = ({}) => {
-  const songs = [];
-  const songItems = songs.map((song) => <div>{song}</div>);
+const MusicTable = ({ songs }) => {
   return (
     <table>
       <thead>
