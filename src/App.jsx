@@ -24,8 +24,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MusicTable songs={songs} />
-      <button onClick={fetchSongs}>Fetch Songs</button>
+      <div className="flex-container">
+        <MusicTable songs={songs} />
+      </div>
     </div>
   );
 }

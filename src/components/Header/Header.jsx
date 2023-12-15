@@ -1,7 +1,9 @@
+import "./Header.css";
+
 const Header = ({}) => {
   return (
     <header>
-      <h2>Music Library</h2>
+      <h2 className="header-text">Music Library</h2>
     </header>
   );
 };
