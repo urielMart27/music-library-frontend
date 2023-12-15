@@ -1,5 +1,6 @@
 import axios from "axios";
 import "./App.css";
+import Header from "./components/Header/Header";
 
 function App() {
   const fetchSongs = async () => {
@@ -12,6 +13,7 @@ function App() {
   };
   return (
     <div className="App">
+      <Header />
       <button onClick={fetchSongs}>Fetch Songs</button>
     </div>
   );
