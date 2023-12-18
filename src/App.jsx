@@ -5,6 +5,7 @@ import MusicTable from "./components/MusicTable/MusicTable";
 import React, { useState, useEffect } from "react";
 import "./components/SearchBar/SearchBar";
 import SearchBar from "./components/SearchBar/SearchBar";
+import NewSongForm from "./components/NewSongForm/NewSongForm";
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -48,6 +49,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="flex-container">
+        <NewSongForm />
         <SearchBar onSearch={handleSearch} />
         <MusicTable songs={filteredSongs} />
       </div>
