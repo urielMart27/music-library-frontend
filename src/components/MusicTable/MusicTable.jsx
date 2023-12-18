@@ -1,7 +1,7 @@
 import React from "react";
 import "./MusicTable.css";
 
-const MusicTable = ({ songs }) => {
+const MusicTable = ({ songs = [] }) => {
   return (
     <table>
       <thead>

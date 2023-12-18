@@ -16,6 +16,7 @@ function App() {
       const response = await axios.get("https://localhost:7073/api/Songs");
       console.log(response.data);
       setSongs(response.data);
+      setFilteredSongs(response.data);
     } catch (error) {
       console.warn("Error in Fetch Songs Request: ", error);
     }
@@ -49,7 +50,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="flex-container">
-        <NewSongForm />
+        <NewSongForm onNewSong={fetchSongs} />
         <SearchBar onSearch={handleSearch} />
         <MusicTable songs={filteredSongs} />
       </div>

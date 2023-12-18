@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const NewSongForm = ({}) => {
+const NewSongForm = ({ onNewSong }) => {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [album, setAlbum] = useState("");
   const [genre, setGenre] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       title,
@@ -16,8 +17,17 @@ const NewSongForm = ({}) => {
       genre,
       releaseDate,
     };
-
-    console.log(formData);
+    try {
+      const response = await axios.post(
+        "https://localhost:7073/api/Songs",
+        formData
+      );
+      if (response.status === 201) {
+        onNewSong();
+      }
+    } catch (error) {
+      console.warn("Error submitting New Song Form: ", error);
+    }
   };
 
   return (
