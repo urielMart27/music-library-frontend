@@ -1,0 +1,16 @@
+.search-bar {
+    display: flex;
+    border: 2px solid #15B4EA;
+    padding: 8px;
+    width: 250px;
+    margin-bottom: 16px;
+}
+
+.search-bar input {
+    background-color: white;
+    color: black;
+    border: none;
+    outline: none;
+    width: 250px;
+    padding: 8px;
+}

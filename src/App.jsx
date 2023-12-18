@@ -3,9 +3,12 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import MusicTable from "./components/MusicTable/MusicTable";
 import React, { useState, useEffect } from "react";
+import "./components/SearchBar/SearchBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   const [songs, setSongs] = useState([]);
+  const [filteredSongs, setFilteredSongs] = useState([]);
 
   const fetchSongs = async () => {
     try {
@@ -17,6 +20,26 @@ function App() {
     }
   };
 
+  const handleSearch = (searchInput) => {
+    const filteredData = songs.filter(
+      (song) =>
+        song.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+        song.artist.toLowerCase().includes(searchInput.toLowerCase()) ||
+        song.album.toLowerCase().includes(searchInput.toLowerCase()) ||
+        song.genre.toLowerCase().includes(searchInput.toLowerCase()) ||
+        (song.releaseDate &&
+          typeof song.releaseDate === "string" &&
+          song.releaseDate.toLowerCase().includes(searchInput.toLowerCase())) ||
+        (song.releaseDate &&
+          typeof song.releaseDate !== "string" &&
+          song.releaseDate
+            .toString()
+            .toLowerCase()
+            .includes(searchInput.toLowerCase()))
+    );
+    setFilteredSongs(filteredData);
+  };
+
   useEffect(() => {
     fetchSongs();
   }, []);
@@ -25,7 +48,8 @@ function App() {
     <div className="App">
       <Header />
       <div className="flex-container">
-        <MusicTable songs={songs} />
+        <SearchBar onSearch={handleSearch} />
+        <MusicTable songs={filteredSongs} />
       </div>
     </div>
   );
