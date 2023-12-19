@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import TextField from "../TextField/TextField";
+import "./NewSongForm.css";
 
 const NewSongForm = ({ onNewSong }) => {
   const [title, setTitle] = useState("");
@@ -31,27 +33,16 @@ const NewSongForm = ({ onNewSong }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex-item">
-      <h4>Add Song</h4>
-      <div>
-        <label>Title</label>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
-      </div>
-      <div>
-        <label>Artist</label>
-        <input value={artist} onChange={(e) => setArtist(e.target.value)} />
-      </div>
-      <div>
-        <label>Album</label>
-        <input value={album} onChange={(e) => setAlbum(e.target.value)} />
-      </div>
-      <div>
-        <label>Genre</label>
-        <input value={genre} onChange={(e) => setGenre(e.target.value)} />
-      </div>
-      <div>
-        <label>Release Date</label>
+    <form onSubmit={handleSubmit} className="flex-item form">
+      <h3 className="form">Add Song</h3>
+      <TextField label="Title" value={title} onChange={setTitle} />
+      <TextField label="Artist" value={artist} onChange={setArtist} />
+      <TextField label="Album" value={album} onChange={setAlbum} />
+      <TextField label="Genre" value={genre} onChange={setGenre} />
+      <div className="form">
+        <label className="form">Release Date</label>
         <input
+          className="text-field-RD"
           value={releaseDate}
           onChange={(e) => setReleaseDate(e.target.value)}
         />

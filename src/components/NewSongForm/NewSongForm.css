@@ -1,0 +1,26 @@
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #535353 ;
+    padding: 20px;
+    border: 1px solid #15B4EA;
+    border-radius: 8px;
+    width: 500px;
+}
+
+.form {
+    background-color: #535353;
+    color: white;
+}
+
+button {
+    background-color: #15B4EA;
+    color: white;
+    padding: 5px;
+}
+

@@ -50,7 +50,9 @@ function App() {
     <div className="App">
       <Header />
       <div className="flex-container">
-        <NewSongForm onNewSong={fetchSongs} />
+        <div className="form-container">
+          <NewSongForm onNewSong={fetchSongs} />
+        </div>
         <SearchBar onSearch={handleSearch} />
         <MusicTable songs={filteredSongs} />
       </div>
