@@ -2,9 +2,10 @@ header {
     color: white;
     background-color: #15B4EA;
     padding: 10px 50px;
-    margin-bottom: 150px;
+    margin-bottom: 270px;
 }
 
 .header-text {
     background-color: #15B4EA;
+    font-family:fantasy
 }

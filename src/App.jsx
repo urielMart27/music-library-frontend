@@ -62,8 +62,12 @@ function App() {
         <div className="form-container">
           <NewSongForm onNewSong={fetchSongs} />
         </div>
-        <SearchBar onSearch={handleSearch} />
-        <MusicTable songs={filteredSongs} onDelete={handleDelete} />
+        <div className="table-container">
+          <div className="search">
+            <SearchBar onSearch={handleSearch} />
+          </div>
+          <MusicTable songs={filteredSongs} onDelete={handleDelete} />
+        </div>
       </div>
     </div>
   );

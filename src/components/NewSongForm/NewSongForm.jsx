@@ -34,7 +34,7 @@ const NewSongForm = ({ onNewSong }) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex-item form">
-      <h3 className="form">Add Song</h3>
+      <h5 className="form">Add Song</h5>
       <TextField label="Title" value={title} onChange={setTitle} />
       <TextField label="Artist" value={artist} onChange={setArtist} />
       <TextField label="Album" value={album} onChange={setAlbum} />

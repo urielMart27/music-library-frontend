@@ -1,13 +1,25 @@
 table {
-    background-color: #121212
+    background-color: #121212;
+    margin-bottom: 50px;
+    
 }
 
 td {
     color: white;
     background-color: #535353;
+    padding: 3px 15px;
 }
 
 th {
     color: white;
     background-color: #15B4EA;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    order: -1;
 }

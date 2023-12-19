@@ -22,5 +22,6 @@ button {
     background-color: #15B4EA;
     color: white;
     padding: 5px;
+    cursor: pointer;
 }
 

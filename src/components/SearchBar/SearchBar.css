@@ -2,8 +2,9 @@
     display: flex;
     border: 2px solid #15B4EA;
     padding: 8px;
-    width: 250px;
-    margin-bottom: 16px;
+    width: 210px;
+    margin-bottom: 5px;
+    margin-top: 50px;
 }
 
 .search-bar input {
@@ -11,6 +12,7 @@
     color: black;
     border: none;
     outline: none;
-    width: 250px;
-    padding: 8px;
+    width: 200px;
+    height: 25px;
+    padding: 4px;
 }
