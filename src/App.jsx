@@ -42,6 +42,15 @@ function App() {
     setFilteredSongs(filteredData);
   };
 
+  const handleDelete = (deletedSongId) => {
+    setSongs((prevSongs) =>
+      prevSongs.filter((song) => song.id !== deletedSongId)
+    );
+    setFilteredSongs((prevFilteredSongs) =>
+      prevFilteredSongs.filter((song) => song.id !== deletedSongId)
+    );
+  };
+
   useEffect(() => {
     fetchSongs();
   }, []);
@@ -54,7 +63,7 @@ function App() {
           <NewSongForm onNewSong={fetchSongs} />
         </div>
         <SearchBar onSearch={handleSearch} />
-        <MusicTable songs={filteredSongs} />
+        <MusicTable songs={filteredSongs} onDelete={handleDelete} />
       </div>
     </div>
   );
